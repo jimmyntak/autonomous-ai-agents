@@ -1,32 +1,30 @@
 # Autonomous AI Agents: Real-Time Vision & Orchestration
 
-> **An advanced, autonomous orchestration system integrating real-time computer vision, browser automation, and Discord communications.**
+> **An advanced, autonomous orchestration system for real-time computer vision, OCR analysis, and Discord integration.**
 
-This project demonstrates a multi-agent orchestration architecture designed for real-time monitoring, data extraction, and automated decision execution across various web platforms. It leverages Playwright, Puppeteer, and computer vision (with OpenAI fallback) to interact with complex web interfaces securely and autonomously.
+This repository contains the core vision processing, data orchestration, and communication modules of our autonomous AI agent. It is designed to parse visual data, perform advanced Optical Character Recognition (OCR), process complex state changes, and relay structured information across channels.
 
 ## Core Features
 
-- **Autonomous Browser Orchestration**: Utilizes stealth-enabled Puppeteer and Playwright to navigate, monitor, and interact with complex web applications (e.g., live data feeds, dashboards) without human intervention.
-- **Real-Time Computer Vision & OCR**: Integrates advanced computer vision techniques to analyze visual changes on screen. Includes an OpenAI Vision API fallback for robust Optical Character Recognition (OCR) when traditional parsing fails.
-- **Discord Integration & Reporting**: Features multiple integrated Discord bots that orchestrate communication, broadcast real-time alerts, and deliver activity logs directly to specified channels.
-- **Configurable Action Logic**: Implements sophisticated data processing pipelines (`bet_data_processor.py`) capable of parsing state changes and triggering automated responses based on a configurable rule engine.
-- **Secure Secret Management**: Built with security best practices, utilizing `dotenv` and environment variables to ensure zero hardcoded credentials in the source code.
+- **Real-Time Computer Vision & OCR**: Utilizes advanced text recognition and bounding box analysis (`text_recognition.py`) to extract structured data from unstructured visual inputs.
+- **OpenAI Vision Fallback**: Features a robust, GPT-4V powered fallback mechanism (`openai_fallback.py`) that handles highly complex image-to-text extractions when standard OCR fails.
+- **Configurable Data Processing**: Implements sophisticated data processing pipelines (`bet_data_processor.py`) capable of parsing state changes and triggering automated responses based on a configurable rule engine.
+- **Discord Integration & Reporting**: Features integrated Discord capabilities (`discord_bot.py`, `txt-to-discord-master/*`) that orchestrate communication, broadcast real-time alerts, and deliver activity logs directly to specified channels.
+- **Multi-Threaded Orchestration**: Efficiently coordinates multiple concurrent analysis and broadcasting tasks (`thread_manager.py`).
 
 ## Architecture & Tech Stack
 
-- **Python**: Core data processing, computer vision analysis, and Playwright orchestration.
-- **Node.js / JavaScript**: Discord bot orchestration and Puppeteer stealth operations.
-- **OpenAI API**: Advanced OCR and visual state processing.
-- **Playwright / Puppeteer**: Headless and headed browser automation.
-- **Discord.js & discord.py**: Real-time messaging and remote system monitoring.
+- **Python**: Core data processing, computer vision analysis, and orchestration.
+- **OpenAI API**: Advanced vision models (GPT-4o) for state processing.
+- **Discord.py / Discord.js**: Real-time messaging and remote system monitoring.
+- **Node.js**: Supplemental scripts for text-to-discord forwarding.
 
 ## Getting Started
 
 ### Prerequisites
 
+- Python 3.9+
 - Node.js (v16+)
-- Python (3.9+)
-- Chrome / Chromium browser installed
 - A Discord Bot Token
 - An OpenAI API Key (for vision/OCR features)
 
@@ -38,16 +36,15 @@ This project demonstrates a multi-agent orchestration architecture designed for 
    cd autonomous-vision-and-orchestration
    ```
 
-2. Install Node.js dependencies:
+2. Install Python dependencies:
    ```bash
-   # In the root or specific program directories
-   npm install dotenv discord.js puppeteer-extra puppeteer-extra-plugin-stealth
+   pip install openai discord.py pyautogui opencv-python Pillow
    ```
+   *(Note: Ensure you have your desired OCR engines installed if running `text_recognition.py` locally)*
 
-3. Install Python dependencies:
+3. Install Node.js dependencies (for specific Discord integrations):
    ```bash
-   pip install playwright openai discord.py
-   playwright install
+   npm install dotenv discord.js
    ```
 
 ### Configuration
@@ -61,7 +58,7 @@ This project demonstrates a multi-agent orchestration architecture designed for 
 
 ## Security Note
 
-This repository has been scrubbed of all hardcoded secrets. Please ensure `config.json` and `.env` remain in your `.gitignore` to prevent accidental credential leaks.
+This repository has been scrubbed of all hardcoded secrets. Please ensure `config.json` and `.env` remain in your `.gitignore` to prevent accidental credential leaks. Scripts containing private or site-specific automation logic have been explicitly excluded from this repository.
 
 ## License
 
