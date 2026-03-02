@@ -56,9 +56,6 @@ This repository contains the core vision processing, data orchestration, and com
 2. Populate the `.env` file with your specific API keys, tokens, and credentials.
 3. Review and copy `config/config.example.json` to `config/config.json` and adjust the general parameters as needed to fit your target environment.
 
-## Security Note
-
-This repository has been scrubbed of all hardcoded secrets. Please ensure `config.json` and `.env` remain in your `.gitignore` to prevent accidental credential leaks. Scripts containing private or site-specific automation logic have been explicitly excluded from this repository.
 
 ## License
 
