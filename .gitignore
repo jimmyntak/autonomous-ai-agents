@@ -1,0 +1,40 @@
+# Sensitive files
+config/config.json
+.env
+bets-414519-13edca7b7e58.json
+program/pc-statbot-master/config.json
+
+# Unrelated scripts (excluded from repo)
+program/pc-statbot-master/
+program/stoiximan.py
+program/Stoiximan.js
+program/novibet.js
+program/novibet.py
+program/bladebet.js
+
+# Model weights
+best.pt
+
+# Runtime data
+data.json
+novidata.json
+runs/
+
+# Chrome profile data
+program/chrome-temp-profile/
+
+# Node modules
+node_modules/
+program/pc-statbot-master/node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+program/logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo

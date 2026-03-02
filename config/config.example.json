@@ -1,0 +1,30 @@
+{
+  "general": {
+    "path_to_model": "/path/to/best.pt",
+    "google_credentials": "/path/to/google-credentials.json",
+    "openai_api_key": "YOUR_OPENAI_API_KEY_HERE"
+  },
+  "betting_companies": {
+    "novibet": {
+      "urls": ["https://www.novibet.gr/", "https://www.novibet.gr/en/"],
+      "username": "YOUR_NOVIBET_USERNAME_HERE",
+      "password": "YOUR_NOVIBET_PASSWORD_HERE",
+      "bet_amounts": {
+        "Τσεκούρι": 0.3,
+        "ΔΕΙΝΟΣΑΥΡΟΣ": 0.5,
+        "ΣΠΑΝΑΚΙ": 1,
+        "ΚΟΡΩΝΑ": 60,
+        "Test": 0.1,
+        "test": 0.1,
+        "Γαμημενο": 0.1,
+        "Τζονκουνμπο": 2
+      }
+    }
+  },
+  "discord": {
+    "channel_id": 1169842980736204811,
+    "bot_token": "YOUR_DISCORD_BOT_TOKEN_HERE",
+    "keywords": ["Τσεκούρι", "ΚΟΡΩΝΑ", "ΔΕΙΝΟΣΑΥΡΟΣ", "ΣΠΑΝΑΚΙ", "test", "Test"],
+    "image_download_path": "/path/to/Discord_Photos"
+  }
+}
